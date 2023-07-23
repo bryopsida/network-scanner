@@ -4,8 +4,14 @@ import { AppService } from './app.service'
 import { ConfigModule } from '@nestjs/config'
 import { HealthModule } from './health/health.module'
 import { LoggerModule } from 'nestjs-pino'
+import { PortScannerModule } from './port-scanner/port-scanner.module'
 @Module({
-  imports: [ConfigModule.forRoot(), LoggerModule.forRoot(), HealthModule],
+  imports: [
+    ConfigModule.forRoot(),
+    LoggerModule.forRoot(),
+    HealthModule,
+    PortScannerModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
