@@ -91,7 +91,9 @@ couchdb:
   autoSetup:
     defaultDatabases:
     - _global_changes
-    - network-scanner
+    - network-scanner.jobs
+    - network-scanner.hosts
+    - network-scanner.services
     enabled: true
   clusterSize: 6
   couchdbConfig:
