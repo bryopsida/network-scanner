@@ -17,6 +17,8 @@
     "helm:deploy": "helm upgrade --install network-scanner ./charts/network-scanner/ --set image.tag=local --set image.pullPolicy=IfNotPresent --debug --wait",
     "helm:test": "helm test network-scanner",
     "helm:uninstall": "helm del network-scanner",
+    "start:services": "docker-compose up -d",
+    "stop:services": "docker-compose down",
     "start": "nest start",
     "start:dev": "nest start --watch | pino-pretty",
     "test": "jest --coverage",

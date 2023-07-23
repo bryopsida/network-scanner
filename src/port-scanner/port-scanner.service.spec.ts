@@ -1,16 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { PortScanerService } from './port-scaner.service'
+import { PortScannerService } from './port-scanner.service'
 import { describe, beforeEach, it, expect } from '@jest/globals'
 
-describe('PortScanerService', () => {
-  let service: PortScanerService
+describe('PortScannerService', () => {
+  let service: PortScannerService
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [PortScanerService],
+      providers: [PortScannerService],
     }).compile()
 
-    service = module.get<PortScanerService>(PortScanerService)
+    service = module.get<PortScannerService>(PortScannerService)
   })
 
   it('should be defined', () => {

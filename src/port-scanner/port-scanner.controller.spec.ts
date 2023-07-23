@@ -1,16 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { PortScanerController } from './port-scaner.controller'
+import { PortScannerController } from './port-scanner.controller'
 import { describe, beforeEach, it, expect } from '@jest/globals'
 
-describe('PortScanerController', () => {
-  let controller: PortScanerController
+describe('PortScannerController', () => {
+  let controller: PortScannerController
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [PortScanerController],
+      controllers: [PortScannerController],
     }).compile()
 
-    controller = module.get<PortScanerController>(PortScanerController)
+    controller = module.get<PortScannerController>(PortScannerController)
   })
 
   it('should be defined', () => {
