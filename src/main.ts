@@ -9,10 +9,10 @@ async function bootstrap() {
   app.useLogger(app.get(Logger))
 
   const config = new DocumentBuilder()
-    .setTitle('Nest.JS Starter')
-    .setDescription('A Nest.JS Starter Project')
+    .setTitle('Network Scanner')
+    .setDescription('An API for managing scheduled network scans')
     .setVersion('1.0')
-    .addTag('starter')
+    .addTag('scanner')
     .build()
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('api', app, document)

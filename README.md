@@ -1,13 +1,8 @@
-# Nest.JS Starter Template
+# Network Scanner
 
-## What's Included
+## What does this do?
 
-- OpenAPI/Swagger
-- Health EP `/health`
-- Helmet
-- Dockerfile
-- Helm Chart
-- GitHub Action workflows to lint, test, build image, and verify helm chart
+Provides a REST Api for defining scheduled scans, results of scans are stored in couchdb.
 
 ## NPM Scripts
 
@@ -31,4 +26,4 @@
 
 ## How to use published chart
 
-First add the repo `helm repo add nestjs-starter  https://bryopsida.github.io/nestjs-starter/`, then fetch updates `helm repo update`, and finally, install with `helm upgrade --install starter nestjs-starter/nestjs-starter --wait`.
+First add the repo `helm repo add network-scanner  https://bryopsida.github.io/network-scanner/`, then fetch updates `helm repo update`, and finally, install with `helm upgrade --install scanner network-scanner/network-scanner --wait`.
