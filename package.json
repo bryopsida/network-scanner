@@ -13,6 +13,7 @@
     "minikube:stop": "minikube stop",
     "minikube:delete": "minikube delete",
     "minikube:copyImage": "minikube image load ghcr.io/bryopsida/network-scanner:local",
+    "createDatabases": "curl -X PUT http://couchdb:password@127.0.0.1:5984/network-scanner_jobs && curl -X PUT http://couchdb:password@127.0.0.1:5984/network-scanner_hosts && curl -X PUT http://couchdb:password@127.0.0.1:5984/network-scanner_services",
     "helm:template": "helm template network-scanner ./charts/network-scanner/",
     "helm:deploy": "helm upgrade --install network-scanner ./charts/network-scanner/ --set image.tag=local --set image.pullPolicy=IfNotPresent --debug --wait",
     "helm:test": "helm test network-scanner",

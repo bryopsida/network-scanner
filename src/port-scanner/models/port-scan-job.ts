@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { Job } from '../../common/entities/job'
 
 export class PortRange {
   @ApiProperty()
@@ -16,11 +17,20 @@ export class PortScanJob {
   cron: string
 
   @ApiProperty()
-  cidr: string
+  networkPartition: string
 
   @ApiProperty({
     isArray: true,
     type: PortRange,
   })
   portRanges: PortRange[]
+
+  static from(job: Job): PortScanJob {
+    return {
+      id: job.id,
+      networkPartition: job.networkPartition,
+      portRanges: job.portRanges,
+      cron: job.cron,
+    }
+  }
 }

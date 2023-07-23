@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing'
 import { PortScannerController } from './port-scanner.controller'
 import { describe, beforeEach, it, expect, jest } from '@jest/globals'
 import { PortScannerService } from './port-scanner.service'
+
 jest.mock('./port-scanner.service')
 
 describe('PortScannerController', () => {
