@@ -80,3 +80,32 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+redis:
+  image:
+    registry: ghcr.io
+    repository: bryopsida/redis
+    tag: main
+    pullPolicy: Always
+couchdb:
+  adminUsername: admin
+  autoSetup:
+    defaultDatabases:
+    - _global_changes
+    - network-scanner
+    enabled: true
+  clusterSize: 6
+  couchdbConfig:
+    cluster:
+      "false": 3
+      q: 6
+    couchdb:
+      uuid: ba47f18a-3304-4d6c-b08b-9cca7a756286
+  createAdminSecret: true
+  enableSearch: false
+  erlangFlags:
+    setcookie: erlang-cookie
+  persistentVolume:
+    enabled: true
+    size: 60Gi
+  podDisruptionBudget:
+    enabled: true
