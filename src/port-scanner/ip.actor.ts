@@ -3,8 +3,8 @@ import { Logger } from '@nestjs/common'
 import { Job } from 'bull'
 
 @Processor('scans.port.ip')
-export class ImageListWorker {
-  private readonly logger = new Logger(ImageListWorker.name)
+export class IpScanWorker {
+  private readonly logger = new Logger(IpScanWorker.name)
 
   @Process()
   async runIpJob(job: Job<unknown>) {}

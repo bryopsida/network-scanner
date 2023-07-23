@@ -3,8 +3,8 @@ import { Logger } from '@nestjs/common'
 import { Job, Queue } from 'bull'
 
 @Processor('scans.port.cidr')
-export class ImageListWorker {
-  private readonly logger = new Logger(ImageListWorker.name)
+export class CidrWorker {
+  private readonly logger = new Logger(CidrWorker.name)
   private readonly ipQueue: Queue
 
   constructor(@InjectQueue('scans.port.ip') queue: Queue) {

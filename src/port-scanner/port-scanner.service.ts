@@ -44,16 +44,22 @@ export class PortScannerService {
   }
 
   public async create(job: PortScanJob): Promise<PortScanJob> {
-    const existing = await this.jobRepository.get(job.id)
-    const result = await this.jobRepository.insert({
-      ...{
-        _id: job.id,
-        _rev: existing?._rev,
-      },
-      ...job,
-    })
-    if (!result.ok) {
-      throw new Error('Failed to insert job doc')
+    try {
+      await this.jobRepository.insert({
+        ...{
+          _id: job.id,
+        },
+        ...job,
+      })
+    } catch (err) {
+      const existing = await this.jobRepository.get(job.id)
+      await this.jobRepository.insert({
+        ...{
+          _id: job.id,
+          _rev: existing._rev,
+        },
+        ...job,
+      })
     }
     const doc = await this.jobRepository.get(job.id)
     await this.queueService.upsertJobDefinition(job)

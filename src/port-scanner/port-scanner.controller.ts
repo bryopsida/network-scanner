@@ -65,7 +65,8 @@ export class PortScannerController {
   async createOrUpdate(
     @Body() portScanJob: PortScanJob,
   ): Promise<CreateJobResponse> {
-    return Promise.resolve(this.jobService.create(portScanJob))
+    const result = await this.jobService.create(portScanJob)
+    return result
   }
 
   @ApiOkResponse({

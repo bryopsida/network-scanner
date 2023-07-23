@@ -5,6 +5,9 @@ import { BullModule } from '@nestjs/bull'
 import { Job } from '../common/entities/job'
 import { CouchDbModule } from '@bryopsida/nest-couchdb'
 import { JobQueueService } from './job-queue.service'
+import { CidrWorker } from './cidr.actor'
+import { IpScanWorker } from './ip.actor'
+import { ScanManager } from './job.actor'
 
 @Module({
   imports: [
@@ -20,6 +23,12 @@ import { JobQueueService } from './job-queue.service'
     CouchDbModule.forFeature([Job]),
   ],
   controllers: [PortScannerController],
-  providers: [PortScannerService, JobQueueService],
+  providers: [
+    PortScannerService,
+    JobQueueService,
+    CidrWorker,
+    IpScanWorker,
+    ScanManager,
+  ],
 })
 export class PortScannerModule {}
