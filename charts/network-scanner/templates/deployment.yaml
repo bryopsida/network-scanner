@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "nestjs-starter.fullname" . }}
+  name: {{ include "network-scanner.fullname" . }}
   labels:
-    {{- include "nestjs-starter.labels" . | nindent 4 }}
+    {{- include "network-scanner.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "nestjs-starter.selectorLabels" . | nindent 6 }}
+      {{- include "network-scanner.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "nestjs-starter.selectorLabels" . | nindent 8 }}
+        {{- include "network-scanner.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "nestjs-starter.serviceAccountName" . }}
+      serviceAccountName: {{ include "network-scanner.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
