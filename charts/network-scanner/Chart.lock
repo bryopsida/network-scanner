@@ -1,9 +1,9 @@
 dependencies:
 - name: redis
   repository: https://groundhog2k.github.io/helm-charts/
-  version: 2.3.0
+  version: 2.3.1
 - name: couchdb
   repository: https://apache.github.io/couchdb-helm
   version: 4.6.3
-digest: sha256:16c776f3d506ee4381936e4702ff307deeb56f67b7dbeb8724f1e1b387468dfb
-generated: "2026-02-12T22:30:26.412935104Z"
+digest: sha256:c407c8ba5266c43ad869c3a6cdc138c9d6e780fb2b07a511b8c74d2597cc8476
+generated: "2026-02-27T02:10:05.515189904Z"
